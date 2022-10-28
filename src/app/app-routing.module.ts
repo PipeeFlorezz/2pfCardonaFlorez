@@ -6,7 +6,7 @@ import { PaginaNoEncontadaComponent } from './core/components/pagina-no-encontad
 import { RegistroLoginComponent } from './core/components/registro-login/registro-login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'alumnos', pathMatch: 'full' },
+  { path: '', redirectTo: 'registro', pathMatch: 'full' },
   {path: '', loadChildren: () => {
      return import('./alumnos/alumnos.module').then(m => m.AlumnosModule);
   }},
