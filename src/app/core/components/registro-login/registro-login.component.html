@@ -1,0 +1,80 @@
+<div class="acceder">
+    <div class="maquetacion">
+        <div class="container-fluid">
+            <div class="row">
+                <div *ngIf="primerForm">
+                    <form #elegirUsuario="ngForm" (ngSubmit)="formUsuario(elegirUsuario)">
+                        <div class="mb-3">
+                          <label  class="form-label">Tipo de usuario</label>
+                          <input type="text" class="form-control" 
+                          [(ngModel)]="Usuario" name="Usuario" required placeholder="Alumno o Administrador">
+                          <div  class="form-text">Formulario exclusivo para elegir el tipo de usuario.</div>
+                        </div>
+
+                        <div class="mb-3 d-grid">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                      </form>
+                </div>
+                <div class="col">
+                    <div *ngIf="Admin">
+                        <form #administradorForm="ngForm" (ngSubmit)="adminForm(administradorForm)">
+                            <div class="mb-3">
+                              <label  class="form-label">Usuario</label>
+                              <input type="text" class="form-control"
+                              [(ngModel)]="admin.nombre" name="nombre" value="Administrador" placeholder="Administrador">
+                              <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-3">
+                              <label  class="form-label">Contraseña</label>
+                              <input type="password" class="form-control"
+                              [(ngModel)]="admin.clave" name="clave">
+                            </div>
+                            <div class="mb-3 d-grid">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                          </form>
+                    </div>
+                    <div *ngIf="Alumno">
+                        <form #alumnoForm="ngForm" (ngSubmit)="formAlumno(alumnoForm)">
+                            <div class="mb-3">
+                              <label  class="form-label">Nombre</label>
+                              <input type="text" class="form-control mb-2" #nombre="ngModel"
+                              [(ngModel)]="alumno.nombre" name="nombre">
+                              <span *ngIf="!nombre.value && nombre.touched" class="text-danger">El nombre es obligatorio</span>
+                            </div>
+                            <div class="mb-3">
+                              <label  class="form-label">Apellido</label>
+                              <input type="text" class="form-control mb-2" #apellido="ngModel"
+                              [(ngModel)]="alumno.apellido" name="apellido">
+                              <span *ngIf="!apellido.value && apellido.touched" class="text-danger">El apellido es obligatorio</span>
+                            </div>
+                              <div class="mb-3">
+                                <label  class="form-label">Edad</label>
+                                <input type="number" class="form-control mb-2" #edad="ngModel"
+                                [(ngModel)]="alumno.edad" name="edad">
+                                <span *ngIf="!edad.value && edad.touched" class="text-danger">La edad es obligatoria y el campo debe ser numerico</span>
+                              </div>
+                              <div class="mb-3">
+                                <label  class="form-label">Pais</label>
+                                <input type="text" class="form-control mb-2" #pais="ngModel"
+                                [(ngModel)]="alumno.pais" name="pais">
+                                <span *ngIf="!pais.value && pais.touched" class="text-danger">El pais es obligatorio</span>
+                              </div>
+                              <div class="mb-3">
+                                <label  class="form-label">Sexo</label>
+                                <input type="text" class="form-control mb-2" #sexo="ngModel"
+                                [(ngModel)]="alumno.sexo" name="sexo">
+                                <span *ngIf="!sexo.value && sexo.touched" class="text-danger">El tipo de genero es obligatorio</span>
+                              </div>
+                            <div class="mb-3 d-grid">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                            <div  class="form-text">Formulario exclusivo solo para Alumnos</div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

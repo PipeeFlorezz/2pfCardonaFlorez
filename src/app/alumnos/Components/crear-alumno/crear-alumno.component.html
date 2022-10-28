@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Crear alumno</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formAlumno" class="example-form">
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre" 
+                placeholder="Ingrese un nombre" >
+              </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input matInput formControlName="apellido" 
+                placeholder="Ingrese apellido" >
+              </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Edad</mat-label>
+                <input matInput formControlName="edad" 
+                placeholder="Ingrese una edad">
+              </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Pais</mat-label>
+                <input matInput formControlName="pais" 
+                placeholder="Ingrese un pais">
+              </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Sexo</mat-label>
+                <input matInput formControlName="sexo" 
+                placeholder="Ingrese el tipo de genero">
+              </mat-form-field>
+        </p>
+      </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button  (click)="crearAlumno()" [disabled]="!formAlumno.valid">Ok</button>
+</div>

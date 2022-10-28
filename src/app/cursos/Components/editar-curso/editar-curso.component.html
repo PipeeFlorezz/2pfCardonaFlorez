@@ -1,0 +1,31 @@
+<form #editForm="ngForm" (ngSubmit)="editCurso(editForm)">
+    <div class="mb-3">
+        <label  class="form-label">Profesor</label>
+        <input type="text" class="form-control mb-2" #profesor="ngModel"
+        [(ngModel)]="curso.profesor" name="profesor">
+        <span *ngIf="!profesor.value && profesor.touched" class="text-danger">Es campo es obligatorio</span>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Nombre</label>
+        <input type="text" class="form-control mb-2" #nombre="ngModel"
+        [(ngModel)]="curso.nombre" name="nombre">
+        <span *ngIf="!nombre.value && nombre.touched" class="text-danger">Es campo es obligatorio</span>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Inicia</label>
+        <input type="date" class="form-control mb-2" #date="ngModel"
+        [(ngModel)]="curso.inicia" name="inicia">
+        <span *ngIf="!date.value && date.touched" class="text-danger">Es campo es obligatorio</span>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Finaliza</label>
+        <input type="date" class="form-control mb-2" #date2="ngModel"
+        [(ngModel)]="curso.finaliza" name="finaliza">
+        <span *ngIf="!date2.value && date2.touched" class="text-danger">Es campo es obligatorio</span>
+      </div>
+    <div class="mb-3 d-grid">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+    <div  class="form-text text-white">Editar curso</div>
+  </form>
+

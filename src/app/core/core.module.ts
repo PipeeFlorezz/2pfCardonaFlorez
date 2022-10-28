@@ -1,0 +1,30 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
+import { MaterialModule } from '../angularMaterial/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroLoginComponent } from './components/registro-login/registro-login.component';
+import { PaginaNoEncontadaComponent } from './components/pagina-no-encontada/pagina-no-encontada.component';
+
+
+
+@NgModule({
+  declarations: [
+    HeaderComponent,
+    RegistroLoginComponent,
+    PaginaNoEncontadaComponent
+  ],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    HeaderComponent
+  ],
+  providers: [
+  ]
+})
+
+export class CoreModule { }
